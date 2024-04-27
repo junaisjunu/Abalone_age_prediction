@@ -1,0 +1,17 @@
+pandas
+numpy
+seaborn
+mlflow==2.2.2
+dvc
+pytest
+flake8
+python-box==6.0.2
+pyYAML
+ensure==1.0.2
+joblib
+types-PyYAML
+gdown
+xgboost
+flask
+
+-e .
