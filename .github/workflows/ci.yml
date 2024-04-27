@@ -30,6 +30,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       
-      - name: Run flake8 --ignore=E501
+      - name: Run flake8 
         run: |
-          flake8 .
+          flake8 --ignore=E501 .
