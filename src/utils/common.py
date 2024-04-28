@@ -8,7 +8,6 @@ from ensure import ensure_annotations
 import os
 import json
 import pickle
-import xgboost as xgb
 
 
 @ensure_annotations
@@ -69,8 +68,3 @@ def load_model(path: Path):
         logger.info("model loaded succesfully!")
     except Exception as e:
         raise (e, sys)
-
-
-if __name__ == "__main__":
-    model = xgb.XGBRFRegressor()
-    save_model(model, Path('artifacts/model.pkl'))
