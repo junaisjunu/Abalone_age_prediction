@@ -1,0 +1,16 @@
+stages:
+  Data_ingestion:
+    cmd: python src/pipeline/stage_01_data_ingestion_pipeline.py
+    deps: 
+      - src/pipeline/stage_01_data_ingestion_pipeline.py
+    outs:
+      - artifacts/data_ingestion/data.csv
+
+  Data_Transformation:
+    cmd: python src/pipeline/stage_02_data_transformation_pipeline.py
+    deps: 
+      - src/pipeline/stage_02_data_transformation_pipeline.py
+      - artifacts/data_ingestion/data.csv
+    outs:
+      - artifacts/data_transformation/test.csv
+      - artifacts/data_transformation/train.csv
