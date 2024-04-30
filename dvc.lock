@@ -32,3 +32,23 @@ stages:
       hash: md5
       md5: dc4c4807d1e55228a541c55746e34200
       size: 3006953
+  Model_Training:
+    cmd: python src/pipeline/stage_03_model_trainer_pipeline.py
+    deps:
+    - path: artifacts/data_transformation/train.csv
+      hash: md5
+      md5: dc4c4807d1e55228a541c55746e34200
+      size: 3006953
+    - path: params.yaml
+      hash: md5
+      md5: 59b9b3b05708f3821df1b0a3890bac35
+      size: 137
+    - path: src/pipeline/stage_03_model_trainer_pipeline.py
+      hash: md5
+      md5: 7f682d75694a097a5a8b56fae44565c5
+      size: 826
+    outs:
+    - path: artifacts/model_trainer/model.pkl
+      hash: md5
+      md5: e0cd7348399b7e15dcdafe99ab7df542
+      size: 736296

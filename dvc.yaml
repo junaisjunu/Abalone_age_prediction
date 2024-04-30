@@ -14,3 +14,12 @@ stages:
     outs:
       - artifacts/data_transformation/test.csv
       - artifacts/data_transformation/train.csv
+
+  Model_Training:
+    cmd: python src/pipeline/stage_03_model_trainer_pipeline.py
+    deps: 
+      - src/pipeline/stage_03_model_trainer_pipeline.py
+      - artifacts/data_transformation/train.csv
+      - params.yaml
+    outs:
+      - artifacts/model_trainer/model.pkl

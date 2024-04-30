@@ -13,7 +13,7 @@ model_trainer:
   transformed_train_data: artifacts/data_transformation/train.csv
   model_trainer_root: artifacts/model_trainer
   model_path: artifacts/model_trainer/model.pkl
-  target: cost
+  target: Rings
 
 model_evaluation:
   model_evaluation_root: artifacts/model_evaluation
