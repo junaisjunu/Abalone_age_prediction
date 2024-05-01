@@ -51,7 +51,8 @@ class Configuration:
             evaluation_score=Path(config.evaluation_score),
             test_data_path=Path(config.test_data_path),
             target=config.target,
-            params=dict(self.params.xgboost)
+            params=dict(self.params.xgboost),
+            mlflow_uri=config.mlflow_uri
         )
         return model_eval_config
 

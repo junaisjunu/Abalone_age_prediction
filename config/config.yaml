@@ -20,7 +20,8 @@ model_evaluation:
   model_path: artifacts/model_trainer/model.pkl
   evaluation_score: artifacts/model_evaluation/score.json
   test_data_path: artifacts/data_transformation/test.csv
-  target: cost
+  target: Rings
+  mlflow_uri: 'https://dagshub.com/junaisk456/Abalone_age_prediction.mlflow'
 
 prediction:
   model_path: artifacts/model_trainer/model.pkl

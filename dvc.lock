@@ -45,10 +45,30 @@ stages:
       size: 137
     - path: src/pipeline/stage_03_model_trainer_pipeline.py
       hash: md5
-      md5: 7f682d75694a097a5a8b56fae44565c5
-      size: 826
+      md5: 7e805931b52c899a90c77af37d777827
+      size: 831
     outs:
     - path: artifacts/model_trainer/model.pkl
       hash: md5
       md5: e0cd7348399b7e15dcdafe99ab7df542
       size: 736296
+  Model_evaluation:
+    cmd: python src/pipeline/stage_04_model_evaluation_pipeline.py
+    deps:
+    - path: artifacts/data_transformation/test.csv
+      hash: md5
+      md5: 9b47f102f2a18d3b8411e8df325f427c
+      size: 1289048
+    - path: artifacts/model_trainer/model.pkl
+      hash: md5
+      md5: e0cd7348399b7e15dcdafe99ab7df542
+      size: 736296
+    - path: src/pipeline/stage_04_model_evaluation_pipeline.py
+      hash: md5
+      md5: 0287acd829bfd233679e95eef381939d
+      size: 811
+    outs:
+    - path: artifacts/model_evaluation/score.json
+      hash: md5
+      md5: 340326fce3623c10143763f10d2c076a
+      size: 397

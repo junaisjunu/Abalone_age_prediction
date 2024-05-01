@@ -32,6 +32,7 @@ class ModelEvaluationConfig:
     test_data_path: Path
     target: str
     params: dict
+    mlflow_uri: str
 
 
 @dataclass
