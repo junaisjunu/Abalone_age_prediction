@@ -38,3 +38,10 @@ class ModelEvaluationConfig:
 @dataclass
 class PredictionConfig:
     model_path: Path
+
+
+@dataclass
+class BulkPredictionConfig:
+    bulk_prediction_root: Path
+    model_path: Path
+    result_data: Path

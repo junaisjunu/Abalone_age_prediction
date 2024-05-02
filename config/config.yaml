@@ -25,3 +25,8 @@ model_evaluation:
 
 prediction:
   model_path: artifacts/model_trainer/model.pkl
+
+bulk_prediction:
+  bulk_prediction_root: artifacts/bulk_prediction
+  model_path: artifacts/model_trainer/model.pkl
+  result_data: artifacts/bulk_prediction/result_data.csv

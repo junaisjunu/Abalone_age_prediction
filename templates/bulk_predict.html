@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <style>
+        table.data {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        table.data th, table.data td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        table.data th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Top 20 results</h2>
+    {% for table in tables %}
+        {{ table|safe }}
+    {% endfor %}
+    <p>You can download the complete result data from here <a href="{{ url_for('download', filename=result_file) }}">download</a>.</p>
+ 
+</body>
+</html>

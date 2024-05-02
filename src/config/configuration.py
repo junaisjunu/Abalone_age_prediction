@@ -1,6 +1,6 @@
 from src.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH, SCHEMA_FILE_PATH
 from src.utils.common import read_yaml, create_directories
-from src.entity.config_entity import DataIngestionConfig, DataTransformationConfig, ModelTrainerConfig, ModelEvaluationConfig, PredictionConfig
+from src.entity.config_entity import DataIngestionConfig, DataTransformationConfig, ModelTrainerConfig, ModelEvaluationConfig, PredictionConfig, BulkPredictionConfig
 from pathlib import Path
 
 
@@ -62,3 +62,12 @@ class Configuration:
             model_path=Path(config.model_path)
         )
         return prediction_config
+
+    def get_bulk_prediction_config(self):
+        config = self.config.bulk_prediction
+        bulk_prediction_config = BulkPredictionConfig(
+            bulk_prediction_root=Path(config.bulk_prediction_root),
+            model_path=Path(config.model_path),
+            result_data=Path(config.result_data)
+        )
+        return bulk_prediction_config

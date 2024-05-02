@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulk Prediction</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+            color: #ffffff;
+        }
+        .centered-content {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        p {
+            font-size: 20px;
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        input[type="file"] {
+            display: none;
+        }
+        .file-upload-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .file-upload-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="centered-content">
+    <h1>Bulk Prediction</h1>
+    <form action="/bulk_predict" method="post" enctype="multipart/form-data">
+        <input type="file" id="file-upload" name="file" accept=".csv" onchange="updateFileName()">
+        <label for="file-upload" class="file-upload-btn">Choose CSV File</label>
+        <span id="file-name"></span>
+        <button type="submit" class="file-upload-btn">Submit</button>
+    </form>
+</div>
+
+<script>
+    function updateFileName() {
+        const input = document.getElementById('file-upload');
+        const fileName = input.files[0].name;
+        document.getElementById('file-name').innerText = fileName;
+    }
+</script>
+
+</body>
+</html>

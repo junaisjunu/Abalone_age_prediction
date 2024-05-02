@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="number"],
+    .form-group select {
+        width: 100%;
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    .form-group select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url('data:image/svg+xml;utf8,<svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.293 6.293a1 1 0 011.414 0l4 4a1 1 0 11-1.414 1.414L12 9.414V17a1 1 0 11-2 0V9.414L6.707 11.707a1 1 0 01-1.414-1.414l4-4z" clip-rule="evenodd"></path></svg>');
+        background-repeat: no-repeat;
+        background-position: right 10px top 50%;
+        background-size: 12px;
+        cursor: pointer;
+    }
+    .form-group button {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .form-group button:hover {
+        background-color: #45a049;
+    }
+    .bulk-prediction-btn {
+        position: absolute; /* Position the button absolutely */
+        top: 10px; /* 10px from the top */
+        right: 10px; /* 10px from the right */
+        padding: 10px 20px; /* Add padding */
+        background-color: #4CAF50; /* Button background color */
+        color: white; /* Text color */
+        border: none; /* Remove border */
+        border-radius: 5px; /* Add border radius */
+        cursor: pointer;
+        text-decoration: none; /* Remove underline from button */
+    }
+    .bulk-prediction-btn:hover {
+        background-color: #45a049; /* Change background color on hover */
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Data Entry Form</h2>
+    <a href="{{ url_for('bulk_prediction_form') }}" class="bulk-prediction-btn">Bulk Prediction</a>
+    
+    <form action="/submit" method="post">
+        <div class="form-group">
+            <label for="sex">Sex:</label>
+            <select id="sex" name="sex" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Infant">Infant</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="length">Length:</label>
+            <input type="number" id="length" name="length" step="0.01" required>
+        </div>
+        <div class="form-group">
+            <label for="diameter">Diameter:</label>
+            <input type="number" id="diameter" name="diameter" step="0.01" required>
+        </div>
+        <div class="form-group">
+            <label for="height">Height:</label>
+            <input type="number" id="height" name="height" step="0.01" required>
+        </div>
+        <div class="form-group">
+            <label for="whole_weight">Whole Weight:</label>
+            <input type="number" id="whole_weight" name="whole_weight" step="0.01" required>
+        </div>
+        <div class="form-group">
+            <label for="whole_weight_1">Shucked Weight:</label>
+            <input type="number" id="whole_weight_1" name="whole_weight_1" step="0.01" required>
+        </div>
+        <div class="form-group">
+            <label for="whole_weight_2">Viscera Weight:</label>
+            <input type="number" id="whole_weight_2" name="whole_weight_2" step="0.01" required>
+        </div>
+        <div class="form-group">
+            <label for="shell_weight">Shell Weight:</label>
+            <input type="number" id="shell_weight" name="shell_weight" step="0.01" required>
+        </div>
+        <div class="form-group">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
