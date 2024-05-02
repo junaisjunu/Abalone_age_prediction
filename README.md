@@ -31,6 +31,8 @@ bash : python app.py
 
 ![bulk_prediction_result](image-2.png)
 
+![download](image-3.png)
+
 Contributors
 Muhammed Junais
 
