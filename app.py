@@ -53,10 +53,11 @@ def bulk_predict():
 
     if file:
         df = pd.read_csv(file)
-        top_20_data = df.head(20)
         bulk_pred = BulkPredction()
-        output_file = bulk_pred.initiate_bulk_prediction(data=df)
-    return render_template('bulk_predict.html', tables=[top_20_data.to_html(classes='data')], titles=top_20_data.columns.values, result_file=output_file)
+        output_file_path = bulk_pred.initiate_bulk_prediction(data=df)
+        reult_data = pd.read_csv(output_file_path)
+        top_20_data = reult_data.head(20)
+    return render_template('bulk_predict.html', tables=[top_20_data.to_html(classes='data')], titles=top_20_data.columns.values, result_file=output_file_path)
 
 
 @app.route('/download/<filename>')
